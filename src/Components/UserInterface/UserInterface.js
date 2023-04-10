@@ -49,16 +49,29 @@ export default function UserInterface() {
         />
         <Alert alertDispaly={visibility} displayMessage={message} />
         <Routes>
-          <Route path="/" element={<About alert={showAlert} mode={mode} />} />
           <Route
+            exact
+            path="/"
+            element={<About alert={showAlert} mode={mode} />}
+          />
+          <Route
+            exact
+            path="/utils"
+            element={<About alert={showAlert} mode={mode} />}
+          />
+
+          <Route
+            exact
             path="/tu"
             element={<TextUtils alert={showAlert} mode={mode} />}
           />
           <Route
+            exact
             path="/et"
             element={<ExpenseTracker alert={showAlert} mode={mode} />}
           />
           <Route
+            exact
             path="/news"
             element={<AllNews alert={showAlert} mode={mode} />}
           />
