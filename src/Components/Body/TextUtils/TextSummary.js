@@ -15,13 +15,17 @@ function TextSummary(props) {
       >
         <h2>Text Summary</h2>
         <p>
-          {props.input !== "" ? props.input.split(" ").length : 0} word and{" "}
-          {props.input.length} character
+          {props.input !== ""
+            ? props.input.split(" ").filter((word) => word !== "").length
+            : 0}{" "}
+          word and {props.input.length} character
         </p>
         <p>
           Expected :{" "}
-          {props.input !== "" ? props.input.split(" ").length * 0.08 : 0} mins
-          read
+          {props.input !== ""
+            ? props.input.split(" ").filter((word) => word !== "").length * 0.08
+            : 0}{" "}
+          mins read
         </p>
         <h2>Preview</h2>
         <p>

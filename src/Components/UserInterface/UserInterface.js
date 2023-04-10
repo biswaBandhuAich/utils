@@ -62,17 +62,17 @@ export default function UserInterface() {
 
           <Route
             exact
-            path="/tu"
+            path="/utils/tu"
             element={<TextUtils alert={showAlert} mode={mode} />}
           />
           <Route
             exact
-            path="/et"
+            path="/utils/et"
             element={<ExpenseTracker alert={showAlert} mode={mode} />}
           />
           <Route
             exact
-            path="/news"
+            path="/utils/news"
             element={<AllNews alert={showAlert} mode={mode} />}
           />
         </Routes>

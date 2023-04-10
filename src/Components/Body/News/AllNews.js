@@ -8,10 +8,11 @@ function AllNews(props) {
   const [newsArticles, setNewsArticles] = useState([]);
 
   const fetchAllNews = async () => {
-    let url = `https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=31696d7173f0409c825ce6086f8f0b77&page=${pageNumber}`;
+    let url = `https://gnews.io/api/v4/search?q=example&apikey=a985c61f198f69d2954105f8e1ea2fda&page=${pageNumber}&max=500`;
     let allNews = await fetch(url);
     let parsedData = await allNews.json();
-    setPageCount(Math.ceil(parseInt(parsedData.totalResults) / 20));
+    setPageCount(Math.ceil(parseInt(parsedData.totalArticles) / 10));
+    console.log(parsedData);
     setNewsArticles(parsedData.articles);
   };
 
@@ -24,7 +25,7 @@ function AllNews(props) {
 
   useEffect(() => {
     fetchAllNews();
-  });
+  }, []);
 
   return (
     <>
@@ -48,7 +49,7 @@ function AllNews(props) {
               <div className="col-md-4 my-3" key={news.title}>
                 <NewsItem
                   title={news.title}
-                  image={news.urlToImage}
+                  image={news.image}
                   description={news.description}
                   url={news.url}
                   mode={props.mode}

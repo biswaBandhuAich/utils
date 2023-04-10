@@ -51,21 +51,21 @@ function NavBar(props) {
             <li className="nav-item">
               <Link
                 className="nav-link active"
-                to="/tu"
+                to="/utils/tu"
                 onClick={textHeaderChange}
               >
                 Text Utility
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link active" to="/et">
+              <Link className="nav-link active" to="/utils/et">
                 Expense Tracker
               </Link>
             </li>
             <li className="nav-item">
               <Link
                 className="nav-link active"
-                to="/news"
+                to="/utils/news"
                 onClick={newHeaderChange}
               >
                 News

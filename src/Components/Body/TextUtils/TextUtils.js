@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./TextUtils.css";
 import TextSummary from "./TextSummary";
 
 function TextUtils(props) {
@@ -40,24 +39,32 @@ function TextUtils(props) {
   function handleConvertUpperCase() {
     let textMain = mainText.toUpperCase();
     setMainText(textMain);
+    props.alert("Text has been converted to uppercase !!!");
   }
 
   function handleConvertLowerCase() {
     let textMain = mainText.toLowerCase();
     setMainText(textMain);
+    props.alert("Text has been converted to lowercase !!!");
   }
 
   function handleCopyText() {
     navigator.clipboard.writeText(mainText);
+    props.alert("Text Copied !!!");
   }
 
   function removeExtraSpace() {
     let textMain = mainText.replace(/\s+/g, " ").trim();
     setMainText(textMain);
+    props.alert("Extra Spaces Removed !!!");
   }
 
   return (
-    <>
+    <div
+      style={{
+        marginTop: "5%",
+      }}
+    >
       <div
         className="container text-center"
         style={
@@ -70,9 +77,6 @@ function TextUtils(props) {
       >
         <h2 className="my-3 text-left"> Enter Your Text Below</h2>
         <textarea
-          cols="inherit"
-          rows="10"
-          resize="vertical"
           padding="10px"
           className="textarea my-2"
           onChange={handleTextInput}
@@ -84,8 +88,15 @@ function TextUtils(props) {
               ? {
                   backgroundColor: "#103262",
                   color: "white",
+                  height: "150px",
+                  width: "70%",
                 }
-              : { backgroundColor: "white", color: "black" }
+              : {
+                  backgroundColor: "white",
+                  color: "black",
+                  height: "150px",
+                  width: "70%",
+                }
           }
         ></textarea>
       </div>
@@ -123,7 +134,7 @@ function TextUtils(props) {
         </button>
       </div>
       <TextSummary input={mainText} mode={props.mode} />
-    </>
+    </div>
   );
 }
 
