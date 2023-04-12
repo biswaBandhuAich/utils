@@ -18,8 +18,8 @@ function About(props) {
           About the App
         </h2>
       </div>
-      <div className="container">
-        <div className="accordion" id="accordionPanelsStayOpenExample1">
+      <div className="container my-5">
+        <div className="accordion " id="accordionPanelsStayOpenExample1">
           <div
             className="accordion-item"
             style={
@@ -50,16 +50,18 @@ function About(props) {
               className="accordion-collapse collapse"
             >
               <div className="accordion-body">
-                Welcome to the All Utility app! I a Biswa a Fullstack developer
-                with knowledge in JAVA and some of its framework, REACT and
-                recently I gained interest in learning GO lang and explore the
-                world of WEB3 and currently I am exploring the same. I am
-                passionate about creating useful tools to make life easier. Here
-                in this app I have merged all the projects I used to build in
-                vanila JS and HTML / CSS in the beginning of my journey as a
-                Software devloper. Thank you for visiting our website. We hope
-                you find our tools useful and we welcome your feedback and
-                suggestions for new tools or features.
+                Welcome to the Utility app! I a Biswa a Fullstack developer with
+                knowledge in JAVA and some of its framework, REACT and recently
+                I have gained interest in GO lang and explore the world of WEB3.
+                I am passionate about creating useful tools to make life easier.
+                Here in this app I have merged some of the projects I used to
+                build in vanila JS and HTML / CSS in the beginning of my journey
+                as a Software devloper. Thank you for visiting the website.
+                Although this is not a finished product and is meant for
+                creating portfolio, but if you want me to add any feature or fix
+                any bugs please write me at biswan8@gmail.com.I hope you find
+                these tools useful and I welcome your feedback and suggestions
+                for new tools or features.
               </div>
             </div>
           </div>
@@ -122,7 +124,7 @@ function About(props) {
                 aria-expanded="false"
                 aria-controls="panelsStayOpen-collapseTwo"
               >
-                <strong>Date Utility</strong>
+                <strong>Expense Tracker</strong>
               </button>
             </h2>
             <div
@@ -130,11 +132,12 @@ function About(props) {
               className="accordion-collapse collapse"
             >
               <div className="accordion-body">
-                Need to work with dates? Our date utility tool offers a range of
-                functions to help you manipulate and format dates. Whether you
-                need to calculate the difference between two dates, format a
-                date in a specific way, or convert between different date
-                formats, our tool can help.
+                The Expense Tracker feature is perfect for managing your
+                personal finances. You can use it to keep track of your
+                expenses, set budgets, and monitor your spending. The Expense
+                Tracker feature also allows you to categorize your expenses and
+                view detailed reports to help you better understand where your
+                money is going.
               </div>
             </div>
           </div>

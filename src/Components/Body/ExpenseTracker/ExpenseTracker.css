@@ -1,0 +1,26 @@
+.cardLeft{
+    max-width: 18rem;
+    margin-left: 50%;
+}
+.cardRight {
+    max-width: 18rem;
+    margin-right: 50%;
+}
+.centerLedgerForm{
+    margin-left: 30%;
+    margin-right: 30%;
+    max-width: 100%;
+}
+
+@media (max-width: 576px) {
+    .card {
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-bottom: 10px;
+        max-width: 100%;
+    }
+        .centerLedgerForm {
+            margin-left: 0%;
+                margin-right: 0%;
+        }
+}

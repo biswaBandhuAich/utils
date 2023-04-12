@@ -16,11 +16,7 @@ function NewsItem(props) {
         }
       >
         <img
-          src={
-            props.image
-              ? props.image
-              : "https://gaadiwaadi.com/wp-content/uploads/2023/04/maruti-suzuki-alto-k10.jpg"
-          }
+          src={props.image ? props.image : ""}
           className="card-img-top"
           alt="..."
           width="200"

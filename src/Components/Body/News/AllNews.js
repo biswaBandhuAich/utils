@@ -3,29 +3,25 @@ import NewsItem from "./NewsItem";
 import Pagination from "./Pagination";
 
 function AllNews(props) {
-  const [pageCount, setPageCount] = useState();
-  const [pageNumber, setPageNumber] = useState(1);
+  const [pageNumber, setPageNumber] = useState(0);
   const [newsArticles, setNewsArticles] = useState([]);
 
   const fetchAllNews = async () => {
-    let url = `https://gnews.io/api/v4/search?q=example&apikey=a985c61f198f69d2954105f8e1ea2fda&page=${pageNumber}&max=500`;
+    let url = `https://newsapiforgithub-default-rtdb.asia-southeast1.firebasedatabase.app/artices.json`;
     let allNews = await fetch(url);
     let parsedData = await allNews.json();
-    setPageCount(Math.ceil(parseInt(parsedData.totalArticles) / 10));
-    console.log(parsedData);
-    setNewsArticles(parsedData.articles);
+    const fetchingDataWithKeys = Object.getOwnPropertyNames(parsedData);
+    setNewsArticles(parsedData[fetchingDataWithKeys[pageNumber]]);
   };
+  useEffect(() => {
+    fetchAllNews();
+  }, []);
 
   const nextNews = (pageNum) => {
-    console.log(pageNum);
     setPageNumber(pageNum);
     fetchAllNews();
     window.scrollTo(0, 0);
   };
-
-  useEffect(() => {
-    fetchAllNews();
-  }, []);
 
   return (
     <>
@@ -46,10 +42,10 @@ function AllNews(props) {
         <div className="row">
           {newsArticles.map((news) => {
             return (
-              <div className="col-md-4 my-3" key={news.title}>
+              <div className="col-md-4 my-3" key={news.url}>
                 <NewsItem
                   title={news.title}
-                  image={news.image}
+                  image={news.urlToImage}
                   description={news.description}
                   url={news.url}
                   mode={props.mode}
@@ -60,7 +56,7 @@ function AllNews(props) {
         </div>
       </div>
       <div className="container">
-        <Pagination pages={pageCount} nextNews={nextNews} />
+        <Pagination nextNews={nextNews} />
       </div>
     </>
   );
